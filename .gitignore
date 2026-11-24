@@ -1,0 +1,21 @@
+# Build
+target/
+*.class
+*.log
+
+# Variáveis de ambiente (nunca versionar segredos)
+.env
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
