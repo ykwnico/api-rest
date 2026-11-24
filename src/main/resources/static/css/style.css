@@ -1,0 +1,524 @@
+/* ==========================================================
+   CS Hub - estilos da página
+   Paleta inspirada no HUD do jogo: fundo grafite, destaque âmbar,
+   azul para CT e laranja para TR.
+   ========================================================== */
+
+:root {
+    --fundo: #0f1215;
+    --painel: #171b20;
+    --painel-2: #1e242b;
+    --borda: #2a3139;
+    --texto: #e4e7eb;
+    --texto-fraco: #8b949e;
+    --destaque: #e8a317;
+    --destaque-escuro: #b67f0f;
+    --ct: #6b8fc7;
+    --tr: #d98b3a;
+    --sucesso: #4caf6e;
+    --erro: #e05252;
+    --raio: 4px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+a {
+    color: var(--destaque);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* ---------- Topo e abas ---------- */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 28px;
+    background: var(--painel);
+    border-bottom: 2px solid var(--destaque);
+}
+
+.topo__marca {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.topo__logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.topo__logo b {
+    color: var(--destaque);
+}
+
+.topo__sub {
+    color: var(--texto-fraco);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.abas {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.aba {
+    background: transparent;
+    color: var(--texto-fraco);
+    border: 1px solid transparent;
+    border-radius: var(--raio);
+    padding: 8px 14px;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.aba:hover {
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+.aba.ativa {
+    color: #111;
+    background: var(--destaque);
+}
+
+/* ---------- Layout principal ---------- */
+.conteudo {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 20px;
+    padding: 24px 28px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.painel {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 20px;
+}
+
+.painel--form {
+    position: sticky;
+    top: 16px;
+}
+
+.painel__titulo {
+    margin: 0 0 16px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contador {
+    color: var(--texto-fraco);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* ---------- Formulário ---------- */
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--texto-fraco);
+}
+
+.campo .obrigatorio {
+    color: var(--destaque);
+}
+
+.campo input,
+.campo select,
+.busca {
+    width: 100%;
+    padding: 9px 10px;
+    background: var(--painel-2);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    font: inherit;
+}
+
+.campo input:focus,
+.campo select:focus,
+.busca:focus {
+    outline: none;
+    border-color: var(--destaque);
+}
+
+.campo.invalido input,
+.campo.invalido select {
+    border-color: var(--erro);
+}
+
+.campo__erro {
+    display: block;
+    margin-top: 4px;
+    color: var(--erro);
+    font-size: 12.5px;
+}
+
+.campo__dica {
+    display: block;
+    margin-top: 4px;
+    color: var(--texto-fraco);
+    font-size: 12px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+    border: 1px solid transparent;
+    border-radius: var(--raio);
+    padding: 9px 16px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.btn--primario {
+    background: var(--destaque);
+    color: #111;
+}
+
+.btn--primario:hover:not(:disabled) {
+    background: var(--destaque-escuro);
+}
+
+.btn--secundario {
+    background: transparent;
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+.btn--secundario:hover {
+    border-color: var(--texto-fraco);
+}
+
+.btn--perigo {
+    background: var(--erro);
+    color: #fff;
+}
+
+.btn--pequeno {
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+/* ---------- Lista / tabela ---------- */
+.lista__cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.lista__cabecalho .painel__titulo {
+    margin: 0;
+}
+
+.lista__ferramentas {
+    display: flex;
+    gap: 8px;
+}
+
+.busca {
+    width: 200px;
+}
+
+.tabela-wrap {
+    overflow-x: auto;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--borda);
+    white-space: nowrap;
+}
+
+.tabela th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--texto-fraco);
+    font-weight: 600;
+}
+
+.tabela tbody tr:hover {
+    background: var(--painel-2);
+}
+
+.tabela td.col-acoes {
+    text-align: right;
+}
+
+.tabela td.col-acoes .btn + .btn {
+    margin-left: 6px;
+}
+
+.selo {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--painel-2);
+    border: 1px solid var(--borda);
+}
+
+.selo--ct { color: var(--ct); border-color: var(--ct); }
+.selo--tr { color: var(--tr); border-color: var(--tr); }
+.selo--sim { color: var(--sucesso); border-color: var(--sucesso); }
+.selo--nao { color: var(--texto-fraco); }
+
+.placar b {
+    color: var(--destaque);
+}
+
+.vencedor {
+    color: var(--sucesso);
+    font-weight: 600;
+}
+
+/* ---------- Estados (carregando, vazio, erro) ---------- */
+.estado:empty {
+    display: none;
+}
+
+.estado {
+    padding: 36px 16px;
+    text-align: center;
+    color: var(--texto-fraco);
+}
+
+.estado--erro {
+    color: var(--erro);
+}
+
+.estado .btn {
+    margin-top: 12px;
+}
+
+.carregando::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: -3px;
+    border: 2px solid var(--borda);
+    border-top-color: var(--destaque);
+    border-radius: 50%;
+    animation: girar .8s linear infinite;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+.aviso {
+    margin: 14px 0 0;
+    padding: 10px 12px;
+    border-radius: var(--raio);
+    font-size: 13.5px;
+}
+
+.aviso--erro {
+    background: rgba(224, 82, 82, .1);
+    border: 1px solid var(--erro);
+    color: #f1a5a5;
+}
+
+/* ---------- Toasts ---------- */
+.toasts {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.toast {
+    min-width: 240px;
+    max-width: 360px;
+    padding: 12px 16px;
+    background: var(--painel-2);
+    border-left: 4px solid var(--sucesso);
+    border-radius: var(--raio);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
+    animation: entrar .2s ease-out;
+}
+
+.toast--erro {
+    border-left-color: var(--erro);
+}
+
+@keyframes entrar {
+    from { opacity: 0; transform: translateY(8px); }
+}
+
+/* ---------- Diálogo ---------- */
+.dialogo {
+    background: var(--painel);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 22px;
+    max-width: 400px;
+    width: calc(100% - 32px);
+}
+
+.dialogo::backdrop {
+    background: rgba(0, 0, 0, .6);
+}
+
+.dialogo h3 {
+    margin-top: 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    padding: 16px 28px;
+    text-align: center;
+    color: var(--texto-fraco);
+    font-size: 13px;
+    border-top: 1px solid var(--borda);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 960px) {
+    .conteudo {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .painel--form {
+        position: static;
+    }
+}
+
+@media (max-width: 680px) {
+    .topo {
+        padding: 12px 16px;
+    }
+
+    .abas {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .lista__ferramentas,
+    .busca {
+        width: 100%;
+    }
+
+    /* Em telas pequenas, cada linha da tabela vira um cartão */
+    .tabela thead {
+        display: none;
+    }
+
+    .tabela tr {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .tabela td {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 4px 4px;
+        border: none;
+        white-space: normal;
+    }
+
+    .tabela td::before {
+        content: attr(data-label);
+        color: var(--texto-fraco);
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .tabela td.col-acoes {
+        justify-content: flex-end;
+        padding-top: 8px;
+    }
+
+    .tabela td.col-acoes::before {
+        content: none;
+    }
+
+    .toasts {
+        left: 16px;
+        right: 16px;
+    }
+
+    .toast {
+        max-width: none;
+    }
+}

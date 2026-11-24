@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Hub | Gestão de campeonato</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="topo__marca">
+            <span class="topo__logo">CS<b>HUB</b></span>
+            <span class="topo__sub">Gestão de campeonato</span>
+        </div>
+        <nav class="abas" aria-label="Seções do sistema">
+            <button class="aba ativa" data-entidade="times" type="button">Times</button>
+            <button class="aba" data-entidade="jogadores" type="button">Jogadores</button>
+            <button class="aba" data-entidade="partidas" type="button">Partidas</button>
+            <button class="aba" data-entidade="mapas" type="button">Mapas</button>
+            <button class="aba" data-entidade="armas" type="button">Armas</button>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <!-- Formulário de cadastro / edição -->
+        <section class="painel painel--form" aria-labelledby="titulo-form">
+            <h2 id="titulo-form" class="painel__titulo">Novo time</h2>
+            <form id="formulario" novalidate>
+                <div id="campos" class="campos"></div>
+                <p id="erro-form" class="aviso aviso--erro" role="alert" hidden></p>
+                <div class="acoes">
+                    <button id="btn-salvar" class="btn btn--primario" type="submit">Cadastrar</button>
+                    <button id="btn-cancelar" class="btn btn--secundario" type="button" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Listagem dos registros -->
+        <section class="painel painel--lista" aria-labelledby="titulo-lista">
+            <div class="lista__cabecalho">
+                <h2 id="titulo-lista" class="painel__titulo">Times cadastrados <span id="contador" class="contador"></span></h2>
+                <div class="lista__ferramentas">
+                    <label class="sr-only" for="busca">Filtrar registros</label>
+                    <input id="busca" class="busca" type="search" placeholder="Filtrar...">
+                    <button id="btn-atualizar" class="btn btn--secundario btn--pequeno" type="button" title="Recarregar lista">Atualizar</button>
+                </div>
+            </div>
+            <div id="estado" class="estado" aria-live="polite"></div>
+            <div class="tabela-wrap">
+                <table id="tabela" class="tabela" hidden>
+                    <thead><tr id="tabela-cabecalho"></tr></thead>
+                    <tbody id="tabela-corpo"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Confirmação de exclusão -->
+    <dialog id="dialogo" class="dialogo">
+        <form method="dialog">
+            <h3>Confirmar exclusão</h3>
+            <p id="dialogo-texto"></p>
+            <div class="acoes">
+                <button class="btn btn--secundario" value="cancelar">Cancelar</button>
+                <button class="btn btn--perigo" value="confirmar">Excluir</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Mensagens rápidas de sucesso/erro -->
+    <div id="toasts" class="toasts" aria-live="assertive"></div>
+
+    <footer class="rodape">
+        CS Hub &middot; API em <a href="swagger-ui.html" target="_blank" rel="noopener">/swagger-ui.html</a>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/entidades.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
