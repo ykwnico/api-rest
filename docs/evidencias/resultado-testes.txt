@@ -1,0 +1,71 @@
+﻿Resultado da execução dos testes automatizados - CS Hub
+Comando: mvnw.cmd test
+Data: 24/11/2026 11:34
+Ambiente: JDK 25 (Temurin), Spring Boot 3.5.7, banco H2 em memória
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.controller.ArmaControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.371 s -- in br.com.cshub.controller.ArmaControllerTest
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.controller.JogadorControllerTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s -- in br.com.cshub.controller.JogadorControllerTest
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.controller.MapaControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 s -- in br.com.cshub.controller.MapaControllerTest
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.controller.PartidaControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 s -- in br.com.cshub.controller.PartidaControllerTest
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.controller.TimeControllerTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 s -- in br.com.cshub.controller.TimeControllerTest
+
+-------------------------------------------------------------------------------
+Test set: br.com.cshub.OpenApiExportTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.444 s -- in br.com.cshub.OpenApiExportTest
+
+Resumo do Maven:
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+Casos de teste executados:
+  [OK] br.com.cshub.controller.ArmaControllerTest > fluxoCompleto
+  [OK] br.com.cshub.controller.ArmaControllerTest > cadastrarInvalido
+  [OK] br.com.cshub.controller.ArmaControllerTest > cadastrar
+  [OK] br.com.cshub.controller.ArmaControllerTest > duplicado
+  [OK] br.com.cshub.controller.JogadorControllerTest > cadastrarTimeInexistente
+  [OK] br.com.cshub.controller.JogadorControllerTest > listarEBuscar
+  [OK] br.com.cshub.controller.JogadorControllerTest > cadastrarComTime
+  [OK] br.com.cshub.controller.JogadorControllerTest > excluir
+  [OK] br.com.cshub.controller.JogadorControllerTest > cadastrarSemTime
+  [OK] br.com.cshub.controller.JogadorControllerTest > cadastrarInvalido
+  [OK] br.com.cshub.controller.JogadorControllerTest > atualizar
+  [OK] br.com.cshub.controller.MapaControllerTest > excluirEmUso
+  [OK] br.com.cshub.controller.MapaControllerTest > fluxoCompleto
+  [OK] br.com.cshub.controller.MapaControllerTest > cadastrarInvalido
+  [OK] br.com.cshub.controller.MapaControllerTest > cadastrar
+  [OK] br.com.cshub.controller.PartidaControllerTest > camposObrigatorios
+  [OK] br.com.cshub.controller.PartidaControllerTest > mesmoTime
+  [OK] br.com.cshub.controller.PartidaControllerTest > fluxoCompleto
+  [OK] br.com.cshub.controller.PartidaControllerTest > cadastrar
+  [OK] br.com.cshub.controller.PartidaControllerTest > mapaInexistente
+  [OK] br.com.cshub.controller.TimeControllerTest > cadastrarDuplicado
+  [OK] br.com.cshub.controller.TimeControllerTest > excluir
+  [OK] br.com.cshub.controller.TimeControllerTest > listar
+  [OK] br.com.cshub.controller.TimeControllerTest > jsonInvalido
+  [OK] br.com.cshub.controller.TimeControllerTest > excluirComJogadores
+  [OK] br.com.cshub.controller.TimeControllerTest > cadastrarInvalido
+  [OK] br.com.cshub.controller.TimeControllerTest > cadastrar
+  [OK] br.com.cshub.controller.TimeControllerTest > atualizar
+  [OK] br.com.cshub.controller.TimeControllerTest > buscarPorId
+  [OK] br.com.cshub.controller.TimeControllerTest > idInvalido
+  [OK] br.com.cshub.OpenApiExportTest > exportarEspecificacao
